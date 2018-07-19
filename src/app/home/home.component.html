@@ -8,12 +8,15 @@
         <div class="col-sm-4">.col-sm-8</div>
       </div>-->
       <table>
-        <tr *ngFor="let hero of heroes; let i=index;">
+        <tr *ngFor="let item of items; let i=index;">
            <!-- <td> {{ myItem.id }} </td>-->
             
-           <td><a [routerLink]="['/item',hero.id ]"><img src="{{ hero.item_image}}" /></a> </td>
-            <td>{{ hero.name }} <br/> {{ hero.item_code }}</td>
-            <!--<th>Qty</th><td><input type="text" name="" [(ngModel)]="id" /></td>
-            <td>{{ myItem.description }}</td>-->
+           <td><a [routerLink]="['/item',item.id ]"><img src="{{ item.item_image}}" /></a> </td>
+            <td>{{ item.name }} <br/> {{ item.item_code }}</td>
+            <th>Price</th><td>{{ item.item_price }}</td>
+           <th>Qty</th><td><input type="number" [value]="item.quantity"  (input)="item.quantity =$event.target.value?$event.target.value:0" min="0" /></td>
+           <td><button (click)="AddToCart()">Add to Cart</button></td>
+           <!-- <td>{{ myItem.description }}</td>-->
         </tr>
     </table>
+    <button>Total Price : {{ totalAmount }}</button>

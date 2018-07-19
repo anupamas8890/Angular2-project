@@ -3,9 +3,9 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { of } from 'rxjs/observable/of';
-
-import { Hero } from './hero';
-import { HEROES } from './mock-heroes';
+import { Item } from './hero';
+import { ITEMS } from './mock-heroes';
+import { ItemQuantity } from './items';
 //import {  } from 'rxjs';
 
 @Injectable( )
@@ -13,15 +13,15 @@ export class FelixStoreService {
 
   constructor() { }
 
-  getHeroes(): Observable<Hero[]> {
-    // TODO: send the message _after_ fetching the heroes
-   // this.messageService.add('HeroService: fetched heroes');
-    return of(HEROES);
+  getHeroes() {
+        return of(ITEMS);
   }
 
-  getHero(id: number): Observable<Hero> {
-    // TODO: send the message _after_ fetching the hero
-   // this.messageService.add(`HeroService: fetched hero id=${id}`);
-    return of(HEROES.find(hero => hero.id === id));
+  getHero(id: number) {   
+    return of(ITEMS.find(hero => hero.id === id));
+  }
+
+  addToCart(id, values) {
+
   }
 }

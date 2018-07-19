@@ -1,9 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FelixStoreService } from '../felix-store.service';
 import { ActivatedRoute , ParamMap , Router } from '@angular/router';
-import { Location } from '@angular/common';
-
-import { Hero }         from '../hero';
+import { Item }  from '../hero';
 
 @Component({
   selector: 'app-item-details',
@@ -11,12 +9,10 @@ import { Hero }         from '../hero';
   styleUrls: ['./item-details.component.css']
 })
 export class ItemDetailsComponent implements OnInit {
-  @Input() hero: Hero;
+  @Input() item: Item;
 
-  myItems;
- 
-  myParams={};
-  constructor(private route : ActivatedRoute, private felixstore : FelixStoreService , private location: Location) {  }
+  myItems; 
+  constructor(private route : ActivatedRoute, private felixstore : FelixStoreService) {  }
   ngOnInit(): void {
     this.getHero();
   }
@@ -24,7 +20,7 @@ export class ItemDetailsComponent implements OnInit {
     getHero(): void {
       const id = +this.route.snapshot.paramMap.get('id');
       this.felixstore.getHero(id)
-        .subscribe(hero => this.hero = hero);
+        .subscribe(item => this.item = item);
     }
 }
   
