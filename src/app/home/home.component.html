@@ -1,22 +1,46 @@
-<!--<div class="row">
-        <div class="col-sm-8" *ngFor="let myItem of myItems; let i=index;">.
-               <div class="">
-                    <img src="{{ myItem.item_image}}" />
-                    <p>{{ myItem.name }}</p>
-               </div> 
-        </div>
-        <div class="col-sm-4">.col-sm-8</div>
-      </div>-->
-      <table>
-        <tr *ngFor="let item of items; let i=index;">
-           <!-- <td> {{ myItem.id }} </td>-->
-            
-           <td><a [routerLink]="['/item',item.id ]"><img src="{{ item.item_image}}" /></a> </td>
+<!-- <div class="row" *ngFor="let item of items; let i=index;">
+                 <td><a [routerLink]="['/item',item.id ]"><img src="{{ item.item_image}}" /></a> </td>
             <td>{{ item.name }} <br/> {{ item.item_code }}</td>
             <th>Price</th><td>{{ item.item_price }}</td>
            <th>Qty</th><td><input type="number" [value]="item.quantity"  (input)="item.quantity =$event.target.value?$event.target.value:0" min="0" /></td>
-           <td><button (click)="AddToCart()">Add to Cart</button></td>
+           <td><button (click)="AddToCart()">Add to Cart</button></td>-->
            <!-- <td>{{ myItem.description }}</td>-->
-        </tr>
-    </table>
-    <button>Total Price : {{ totalAmount }}</button>
+        
+      <!-- </div>
+    <button>Total Price : {{ totalAmount }}</button> -->
+
+    <section class="intro">
+        <div class="container text-center">
+          <h2 class="heading-center">Welcome to the Felix T-shirt store template</h2>
+          <p class="lead">This template is great for single product shops. It comes with <strong>3 html pages</strong>, <strong>6 colour variants</strong>                and <strong>SASS files</strong> to take the visual configuration even further. All fully-responsive and
+             based on latest Bootstrap 4.0.0.
+          </p>
+        </div>
+      </section>
+
+      <section class="new-arrivals">
+          <div class="container text-center">
+            <h2 class="heading-center">Our Products</h2>
+            <div class="items">
+              <div class="row">
+                <div class="col-lg-4 item"  *ngFor="let item of items; let i=index;">
+                  <div class="item-image"><a [routerLink]="['/item',item.id ]"><img src="{{ item.item_image}}" alt="shirt"></a>                 
+                  </div>
+                  <div class="item-info">
+                    <h5>{{ item.name }} </h5>
+                    <ul class="price list-inline">
+                      <li class="list-inline-item current">{{ item.item_price }}</li>
+                    </ul>
+                  </div>
+                </div>            
+              </div>
+            </div>
+          </div>
+        </section>
+
+    <div class="row"  *ngFor="let item of items; let i=index;">
+        <div class="">
+
+        </div>
+
+    </div>
