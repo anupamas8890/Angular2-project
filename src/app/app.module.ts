@@ -10,6 +10,8 @@ import { FelixStoreService } from './felix-store.service';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ItemDetailsComponent } from './item-details/item-details.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { SuccessComponent } from './success/success.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ItemDetailsComponent } from './item-details/item-details.component';
     FooterComponent,
    // AppRoutingComponent,
     HomeComponent,
-   ItemDetailsComponent
+   ItemDetailsComponent,
+   CheckoutComponent,
+   SuccessComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, FormsModule

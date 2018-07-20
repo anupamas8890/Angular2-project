@@ -12,7 +12,7 @@ export class ItemDetailsComponent implements OnInit {
   @Input() item: Item;
 
   myItems; 
-  constructor(private route : ActivatedRoute, private felixstore : FelixStoreService) {  }
+  constructor(private route : ActivatedRoute, private felixstore : FelixStoreService, private routes: Router) {  }
   ngOnInit(): void {
     this.getHero();
   }
@@ -21,6 +21,10 @@ export class ItemDetailsComponent implements OnInit {
       const id = +this.route.snapshot.paramMap.get('id');
       this.felixstore.getHero(id)
         .subscribe(item => this.item = item);
+    }
+
+    returnHome() {
+      this.routes.navigate(['/']);
     }
 }
   

@@ -30,6 +30,9 @@
                     <h5>{{ item.name }} </h5>
                     <ul class="price list-inline">
                       <li class="list-inline-item current">{{ item.item_price }}</li>
+                      <li><input type="number" [value]="item.quantity"  (input)="item.quantity =$event.target.value?$event.target.value:0" min="0" />
+                          <button class="btn btn-success" (click)="AddToCart()">Add to Cart</button>
+                      </li>
                     </ul>
                   </div>
                 </div>            
@@ -38,9 +41,9 @@
           </div>
         </section>
 
-    <div class="row"  *ngFor="let item of items; let i=index;">
-        <div class="">
-
-        </div>
-
-    </div>
+        <section class="intro">
+          <div class="container text-center">
+              <h2 class="heading-center">Total Amount : <span class="total_amount">{{ totalAmount}} </span>
+             <button class=" btn-success btn checkout" (click)="checkout()">Proceed To Checkout</button></h2>         
+            </div>
+            </section>

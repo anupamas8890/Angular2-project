@@ -161,6 +161,7 @@ section.new-arrivals .items .item .item-info ul.price li.current {
 .item .item-info p {
     color: #555;
     margin: 30px 0;
+    font-size: 17px;
 }
 
 .item .item-info ul.product-info {
@@ -239,14 +240,26 @@ btn:not(:disabled):not(.disabled) {
 .btn {
     font-weight: 700;
     border: 1px solid transparent;
-    padding: .375rem 2rem;
-    font-size: .9rem;
+    /*padding: .375rem 2rem;*/
+    font-size: 11px;
     line-height: 1.5;
-    border-radius: 2rem;
+  /*  border-radius: 2rem;*/
     -webkit-transition: background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,-webkit-box-shadow 0.15s ease-in-out;
     transition: background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,-webkit-box-shadow 0.15s ease-in-out;
     transition: background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
     transition: background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out,-webkit-box-shadow 0.15s ease-in-out;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+}
+
+ul.price.list-inline > li {
+    display: block;
+}
+
+span.price {
+    font-weight: bold;
+}
+
+li.price {
+    font-size: 19px;
 }

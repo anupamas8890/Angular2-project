@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
  totalAmount : number=0; 
  result:number =0;
 
-  constructor(private route : ActivatedRoute, private felixstore : FelixStoreService) {  }
+  constructor(private route : ActivatedRoute, private felixstore : FelixStoreService, private routes: Router) {  }
 
   ngOnInit() {
     this.getHeroes();
@@ -28,20 +28,20 @@ export class HomeComponent implements OnInit {
     .subscribe(items => this.items = items);
   }
 
-  AddToCart() {
+  AddToCart() {  
     this.items.forEach((item, index) => {     
         this.result+= item.item_price*item.quantity; 
-     });
+       });
     
      this.totalAmount=this.result;
     this.result=0;
-   return (this.totalAmount);
-    //return of(this.totalAmount);
-       
+   
+   return (this.totalAmount);       
 
   } 
- // myItems;
-
- 
+  
+  checkout() {
+    this.routes.navigate(['/checkout']);
+  }
   
 }
